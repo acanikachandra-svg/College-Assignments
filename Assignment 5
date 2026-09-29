@@ -1,0 +1,12 @@
+import re
+
+def is_allowed(text):
+    # ^ start, [a-zA-Z0-9]+ one or more allowed chars, $ end
+    return re.fullmatch(r"[a-zA-Z0-9]+", text) is not None
+
+s = input("Enter a string: ")
+
+if is_allowed(s):
+    print("The string contains only a-z, A-Z and 0-9.")
+else:
+    print("The string contains other characters.")
